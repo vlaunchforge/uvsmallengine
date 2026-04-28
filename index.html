@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Utah Valley Small Engine Repair — Mobile Service, We Come To You</title>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        <style>:root { --forest: #1a2e1a; --sage: #3d5a3d; --lime: #b8e04a; --cream: #f5f0e6; --warm: #e8dcc8; --rust: #c44b2b; --charcoal: #2a2a2a; --white: #fefefe; } * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--charcoal); overflow-x: hidden; } /* ═══════════ NAV ═══════════ */nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(26,46,26,0.95); backdrop-filter: blur(12px); padding: 0 40px; height: 70px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--lime); } @media print { nav {  position: relative;  background: rgb(26,46,26);  backdrop-filter: none; }  .hero {  padding-top: 80px; }  .reveal {  opacity: 1 !important;  transform: none !important; }  * {  -webkit-print-color-adjust: exact !important;  print-color-adjust: exact !important; } } .nav-logo { font-family: 'DM Serif Display', serif; color: var(--lime); font-size: 1.5rem; letter-spacing: -0.5px; } .nav-logo span { color: var(--cream); font-style: italic; } .nav-links { display: flex; gap: 32px; align-items: center; } .nav-links a { color: var(--cream); text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.3s; } .nav-links a:hover { color: var(--lime); } .nav-cta { background: var(--lime) !important; color: var(--forest) !important; padding: 10px 24px !important; border-radius: 6px; font-weight: 700 !important; letter-spacing: 0.5px; transition: transform 0.2s, box-shadow 0.2s !important; } .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(184,224,74,0.4); } .mobile-menu { display: none; background: none; border: none; cursor: pointer; } .mobile-menu span { display: block; width: 28px; height: 3px; background: var(--cream); margin: 5px 0; border-radius: 2px; } /* ═══════════ HERO ═══════════ */.hero { min-height: 100vh; background: var(--forest); display: flex; align-items: center; padding: 120px 60px 80px; position: relative; overflow: hidden; } .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 20% 50%, rgba(184,224,74,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 30%, rgba(184,224,74,0.05) 0%, transparent 50%); } .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; } .hero-text { display: flex; flex-direction: column; justify-content: center; } .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(184,224,74,0.15); border: 1px solid rgba(184,224,74,0.3); padding: 6px 16px; border-radius: 100px; width: fit-content; margin-bottom: 28px; animation: fadeInUp 0.8s ease-out both; } .hero-badge span { color: var(--lime); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; } .hero-badge .dot { width: 8px; height: 8px; background: var(--lime); border-radius: 50%; animation: pulse 2s infinite; } h1 { font-family: 'DM Serif Display', serif; font-size: clamp(3rem, 5.5vw, 4.8rem); color: var(--cream); line-height: 1.05; margin-bottom: 24px; animation: fadeInUp 0.8s 0.15s ease-out both; } h1 em { color: var(--lime); font-style: italic; } .hero-sub { font-size: 1.15rem; color: rgba(245,240,230,0.7); line-height: 1.7; max-width: 500px; margin-bottom: 40px; font-weight: 300; animation: fadeInUp 0.8s 0.3s ease-out both; } .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeInUp 0.8s 0.45s ease-out both; } .btn-primary { background: var(--lime); color: var(--forest); padding: 16px 36px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 700; cursor: pointer; font-family: 'Outfit',sans-serif; transition: transform 0.2s, box-shadow 0.3s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; } .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(184,224,74,0.35); } .btn-secondary { background: transparent; color: var(--cream); padding: 16px 36px; border: 2px solid rgba(245,240,230,0.3); border-radius: 8px; font-size: 1rem; font-weight: 500; cursor: pointer; font-family: 'Outfit',sans-serif; transition: border-color 0.3s, color 0.3s; text-decoration: none; } .btn-secondary:hover { border-color: var(--lime); color: var(--lime); } /* Hero visual — the "hassle vs ease" comparison */.hero-visual { display: flex; flex-direction: column; gap: 20px; animation: fadeInUp 0.8s 0.5s ease-out both; } .comparison-card { border-radius: 16px; padding: 36px; position: relative; overflow: hidden; } .hassle-card { background: rgba(196,75,43,0.12); border: 1.5px solid rgba(196,75,43,0.3); } .ease-card { background: rgba(184,224,74,0.1); border: 1.5px solid rgba(184,224,74,0.3); flex: 1.2; } .card-icon { font-size: 2.2rem; margin-bottom: 12px; } .card-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 10px; } .hassle-card .card-label { color: var(--rust); } .ease-card .card-label { color: var(--lime); } .card-title { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--cream); margin-bottom: 10px; line-height: 1.2; } .card-list { list-style: none; display: flex; flex-direction: column; gap: 6px; } .card-list li { font-size: 0.88rem; color: rgba(245,240,230,0.6); font-weight: 300; display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; } .x-mark { color: var(--rust); font-weight: 700; flex-shrink: 0; } .check-mark { color: var(--lime); font-weight: 700; flex-shrink: 0; } /* ═══════════ HASSLE STRIP ═══════════ */.hassle-strip { background: var(--rust); padding: 60px 40px; text-align: center; position: relative; overflow: hidden; } .hassle-strip::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(
+      -45deg, transparent, transparent 20px,
+      rgba(0,0,0,0.05) 20px, rgba(0,0,0,0.05) 22px
+    ); } .hassle-strip h2 { font-family: 'DM Serif Display',serif; color: var(--white); font-size: clamp(1.6rem,3vw,2.4rem); position: relative; z-index: 1; max-width: 900px; margin: 0 auto; line-height: 1.3; } .hassle-strip h2 em { color: #ffd6cc; } /* ═══════════ HOW IT WORKS ═══════════ */.how-section { padding: 100px 60px; max-width: 1300px; margin: 0 auto; } .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; color: var(--sage); margin-bottom: 12px; } .section-title { font-family: 'DM Serif Display',serif; font-size: clamp(2rem,4vw,3.2rem); color: var(--forest); margin-bottom: 60px; line-height: 1.1; } .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; } .step-card { background: var(--white); border-radius: 16px; padding: 40px 32px; border: 1px solid rgba(61,90,61,0.1); transition: transform 0.3s, box-shadow 0.3s; position: relative; } .step-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(26,46,26,0.08); } .step-num { font-family: 'DM Serif Display',serif; font-size: 4rem; color: rgba(184,224,74,0.25); line-height: 1; position: absolute; top: 20px; right: 24px; } .step-icon { font-size: 2.5rem; margin-bottom: 20px; } .step-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--forest); } .step-card p { font-size: 0.92rem; color: #666; line-height: 1.65; font-weight: 300; } .connector { display: none;  /* visible on larger screens via grid */ } /* ═══════════ SERVICES ═══════════ */.services-section { background: var(--forest); padding: 100px 60px; } .services-inner { max-width: 1300px; margin: 0 auto; } .services-section .section-label { color: var(--lime); } .services-section .section-title { color: var(--cream); } .services-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; } .service-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(184,224,74,0.15); border-radius: 14px; padding: 32px 24px; transition: background 0.3s, border-color 0.3s, transform 0.3s; cursor: default; } .service-card:hover { background: rgba(184,224,74,0.08); border-color: rgba(184,224,74,0.4); transform: translateY(-4px); } .service-icon { font-size: 2.2rem; margin-bottom: 16px; } .service-card h3 { font-size: 1.05rem; font-weight: 600; color: var(--cream); margin-bottom: 8px; } .service-card p { font-size: 0.85rem; color: rgba(245,240,230,0.5); line-height: 1.55; font-weight: 300; } .service-tag { display: inline-block; margin-top: 14px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--lime); font-weight: 600; padding: 4px 10px; border-radius: 4px; background: rgba(184,224,74,0.1); } /* ═══════════ SERVICE AREA ═══════════ */.area-section { background: var(--warm); padding: 100px 60px; } .area-inner { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: start; } .area-desc { font-size: 1.05rem; color: #555; line-height: 1.7; font-weight: 300; margin-bottom: 32px; } .area-cities { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-bottom: 24px; } .area-cities h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--sage); margin-bottom: 10px; } .area-col { display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start; } .area-col span { background: var(--white); padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; color: var(--charcoal); font-weight: 500; border: 1px solid rgba(61,90,61,0.1); } .area-note { font-size: 0.88rem; color: var(--sage); font-weight: 500; font-style: italic; } .mobile-badge-large { background: var(--forest); border-radius: 20px; padding: 44px 36px; color: var(--cream); position: relative; overflow: hidden; } .mobile-badge-large::before { content: ''; position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: radial-gradient(circle, rgba(184,224,74,0.15) 0%, transparent 70%); } .mbl-icon { font-size: 3rem; margin-bottom: 16px; } .mbl-title { font-family: 'DM Serif Display',serif; font-size: 2rem; color: var(--lime); margin-bottom: 10px; } .mbl-sub { font-size: 0.92rem; color: rgba(245,240,230,0.6); line-height: 1.6; font-weight: 300; margin-bottom: 28px; } .mbl-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; } .mbl-stat { text-align: center; } .mbl-stat-num { font-family: 'DM Serif Display',serif; font-size: 1.3rem; color: var(--lime); margin-bottom: 4px; } .mbl-stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: rgba(245,240,230,0.45); font-weight: 600; } /* ═══════════ TESTIMONIALS ═══════════ */.testimonials-section { padding: 100px 60px; max-width: 1300px; margin: 0 auto; } .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; } .testimonial-card { background: var(--white); border-radius: 16px; padding: 36px; border: 1px solid rgba(61,90,61,0.08); display: flex; flex-direction: column; transition: transform 0.3s; } .testimonial-card:hover { transform: translateY(-4px); } .stars { color: #f0b429; font-size: 1rem; margin-bottom: 16px; letter-spacing: 2px; } .testimonial-card blockquote { font-size: 0.95rem; line-height: 1.7; color: #444; font-weight: 300; flex: 1; font-style: italic; margin-bottom: 20px; } .testimonial-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid rgba(0,0,0,0.06); } .author-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--sage); color: var(--cream); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; } .author-name { font-weight: 600; font-size: 0.88rem; } .author-detail { font-size: 0.75rem; color: #999; } /* ═══════════ PRICING ═══════════ */.pricing-section { background: var(--warm); padding: 100px 60px; } .pricing-inner { max-width: 1300px; margin: 0 auto; } .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; } .price-card { background: var(--white); border-radius: 16px; padding: 40px 32px; border: 1px solid rgba(61,90,61,0.08); transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; } .price-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.06); } .price-card.featured { border: 2px solid var(--lime); background: var(--forest); color: var(--cream); } .price-card.featured h3 { color: var(--lime); } .price-card.featured .price { color: var(--cream); } .price-card.featured .price-desc { color: rgba(245,240,230,0.6); } .price-card.featured .price-features li { color: rgba(245,240,230,0.7); } .price-card.featured .price-features li .pf-check { color: var(--lime); } .popular-badge { position: absolute; top: 20px; right: -30px; background: var(--lime); color: var(--forest); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding: 6px 40px; transform: rotate(45deg); } .price-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--forest); margin-bottom: 4px; } .price-desc { font-size: 0.82rem; color: #888; margin-bottom: 20px; font-weight: 300; } .price { font-family: 'DM Serif Display',serif; font-size: 3rem; color: var(--forest); margin-bottom: 4px; } .price sup { font-size: 1.4rem; } .price-note { font-size: 0.75rem; color: #aaa; margin-bottom: 24px; } .price-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; } .price-features li { font-size: 0.88rem; color: #555; display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; } .pf-check { color: var(--sage); font-weight: 700; flex-shrink: 0; } .btn-price { width: 100%; padding: 14px; border: none; border-radius: 8px; font-family: 'Outfit',sans-serif; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; } .btn-price-primary { background: var(--lime); color: var(--forest); } .btn-price-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(184,224,74,0.4); } .btn-price-outline { background: transparent; color: var(--forest); border: 2px solid rgba(61,90,61,0.2); } .btn-price-outline:hover { border-color: var(--sage); } /* ═══════════ CTA ═══════════ */.cta-section { background: var(--forest); padding: 100px 60px; text-align: center; position: relative; overflow: hidden; } .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(184,224,74,0.1) 0%, transparent 70%); } .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; } .cta-section h2 { font-family: 'DM Serif Display',serif; font-size: clamp(2rem,4vw,3.2rem); color: var(--cream); margin-bottom: 16px; line-height: 1.1; } .cta-section p { font-size: 1.05rem; color: rgba(245,240,230,0.6); margin-bottom: 36px; font-weight: 300; line-height: 1.6; } .cta-phone { font-family: 'DM Serif Display',serif; font-size: 2rem; color: var(--lime); text-decoration: none; display: inline-block; margin-top: 20px; transition: transform 0.2s; } .cta-phone:hover { transform: scale(1.05); } /* ═══════════ FOOTER ═══════════ */footer { background: #111; padding: 60px 60px 30px; color: rgba(255,255,255,0.5); } .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1300px; margin: 0 auto 40px; } .footer-brand .nav-logo { font-size: 1.3rem; margin-bottom: 12px; } .footer-brand p { font-size: 0.85rem; line-height: 1.6; max-width: 300px; } footer h4 { color: var(--cream); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; } footer ul { list-style: none; display: flex; flex-direction: column; gap: 8px; } footer ul li a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.88rem; transition: color 0.3s; } footer ul li a:hover { color: var(--lime); } .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center; font-size: 0.78rem; max-width: 1300px; margin: 0 auto; } /* ═══════════ ANIMATIONS ═══════════ */@keyframes fadeInUp { from {  opacity: 0;  transform: translateY(30px); }  to {  opacity: 1;  transform: translateY(0); } } @keyframes pulse { 0%, 100% {  opacity: 1; }  50% {  opacity: 0.4; } } /* ═══════════ SCROLL REVEALS ═══════════ */.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; } .reveal.visible { opacity: 1; transform: translateY(0); } /* ═══════════ RESPONSIVE ═══════════ */@media (max-width:1024px) { .hero-grid {  grid-template-columns: 1fr;  gap: 40px; }  .steps-grid {  grid-template-columns: 1fr;  max-width: 480px; }  .services-grid {  grid-template-columns: repeat(2,1fr); }  .pricing-grid {  grid-template-columns: 1fr;  max-width: 440px;  margin: 0 auto; }  .testimonials-grid {  grid-template-columns: 1fr;  max-width: 520px;  margin: 0 auto; }  .area-inner {  grid-template-columns: 1fr; }  .footer-grid {  grid-template-columns: 1fr 1fr; } } @media (max-width:768px) { nav {  padding: 0 20px; }  .nav-links {  display: none; }  .mobile-menu {  display: block; }  .hero {  padding: 100px 24px 60px; }  .how-section, .testimonials-section {  padding: 80px 24px; }  .services-section, .pricing-section, .cta-section, .area-section {  padding: 80px 24px; }  .services-grid {  grid-template-columns: 1fr; }  .area-cities {  grid-template-columns: 1fr; }  .mbl-stats {  grid-template-columns: 1fr;  gap: 12px; }  footer {  padding: 40px 24px 20px; }  .footer-grid {  grid-template-columns: 1fr; } }</style>
+    </head>
+    <body>
+        <!-- ═══════════ NAV ═══════════ -->
+        <nav>
+            <div class="nav-logo">Utah Valley <span><br><p>Small Engine&nbsp;<span style="color: rgb(245, 240, 230); font-size: 1.5rem;">Repair</span></p></span>
+            </div>
+            <div class="nav-links">
+                <a href="#how">How It Works</a>
+                <a href="#services">Services</a>
+                <a href="#area">Service Area</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#contact" class="nav-cta">Book Now</a>
+            </div>
+            <button class="mobile-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <!-- ═══════════ HERO ═══════════ -->
+        <section class="hero">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <div class="dot"></div>
+                        <span>100% Mobile — We Come To Your Driveway</span>
+                    </div>
+                    <h1>Stop hauling.<br>Just&nbsp;<em>Call.</em></h1>
+                    <p class="hero-sub">Utah Valley&apos;s most convenient mobile small engine repair. Your lawn mower and snow blower get expert tune-ups and repairs right in your driveway &#8212; from Mona to Lindon and everywhere in between. No loading. No driving. No waiting weeks at a shop.</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn-primary">Schedule Service &rarr;</a>
+                        <a href="#how" class="btn-secondary">See How It Works</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="comparison-card hassle-card">
+                        <div class="card-icon">😤</div>
+                        <div class="card-label">The Old Way</div>
+                        <div class="card-title">Hauling to the shop</div>
+                        <ul class="card-list">
+                            <li>
+                                <span class="x-mark">✕</span> Wrestle a 200 lb. mower into your car
+                            </li>
+                            <li>
+                                <span class="x-mark">✕</span> Drive across town, wait 2–4 weeks
+                            </li>
+                            <li>
+                                <span class="x-mark">&#10005;</span>Eventually your mower is ready.
+                            </li>
+                            <li>
+                                <span class="x-mark">✕</span> Haul it all back home again
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card ease-card">
+                        <div class="card-icon">😎</div>
+                        <div class="card-label">The Utah Valley Mobile Way</div>
+                        <div class="card-title">Serviced at your home</div>
+                        <ul class="card-list">
+                            <li>
+                                <span class="check-mark">✓</span> Roll it to your driveway — that's it
+                            </li>
+                            <li>
+                                <span class="check-mark">&#10003;</span> We arrive at the scheduled time.
+                            </li>
+                            <li>
+                                <span class="check-mark">✓</span> Transparent pricing before we start
+                            </li>
+                            <li>
+                                <span class="check-mark">✓</span> Done in ~1 hour, oil and parts hauled away
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ═══════════ HASSLE STRIP ═══════════ -->
+        <!-- ═══════════ HOW IT WORKS ═══════════ -->
+        <section class="how-section" id="how">
+            <div class="section-label reveal">How It Works</div>
+            <h2 class="section-title reveal">Three steps. Zero hassle.</h2>
+            <div class="steps-grid">
+                <div class="step-card reveal">
+                    <div class="step-num">01</div>
+                    <div class="step-icon">📞</div>
+                    <h3>Call or Text to Schedule</h3>
+                    <p>Tell us what you've got — mower, snow blower, tiller, generator — and we'll give you a clear quote before we ever show up.</p>
+                </div>
+                <div class="step-card reveal">
+                    <div class="step-num">02</div>
+                    <div class="step-icon">🏠</div>
+                    <h3>Set It in the Driveway</h3>
+                    <p>Roll your equipment outside at the scheduled time. Our certified mobile tech arrives in a fully stocked service vehicle with parts, tools, and fresh oil &#8212; your driveway becomes the shop.</p>
+                </div>
+                <div class="step-card reveal">
+                    <div class="step-num">03</div>
+                    <div class="step-icon">✅</div>
+                    <h3>Done — Go Enjoy Your Day</h3>
+                    <p>Most tune-ups done in under an hour. We collect payment, clean up, haul away old parts and used oil, and leave your machine running like new.</p>
+                </div>
+            </div>
+        </section>
+        <!-- ═══════════ SERVICES ═══════════ -->
+        <section class="services-section" id="services">
+            <div class="services-inner">
+                <div class="section-label reveal">What We Service</div>
+                <h2 class="section-title reveal" style="color:var(--cream)">Everything that has a small engine<br>and lives in your garage.</h2>
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="service-icon">🌿</div>
+                        <h3>Lawn Mowers</h3>
+                        <p>Push, self-propelled, and riding mowers. Full tune-ups, blade sharpening, oil change, carb cleaning, cable repair.</p>
+                        <span class="service-tag">Most Popular</span>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon">❄️</div>
+                        <h3>Snow Blowers</h3>
+                        <p>Single and two-stage. Pre-season tune-ups, impeller fixes, auger belt replacement, fuel system flush.</p>
+                        <span class="service-tag">Seasonal</span>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon">⚡</div>
+                        <h3>Generators</h3>
+                        <p>Portable and standby. Keep your backup power reliable with annual maintenance and load testing.</p>
+                    </div>
+                    <div class="service-card reveal">
+                        <div class="service-icon">🔧</div>
+                        <h3>Other Equipment</h3>
+                        <p>Trimmers, edgers, tillers, chainsaws, pressure washers, leaf blowers — if it has a small engine, we fix it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ═══════════ SERVICE AREA ═══════════ -->
+        <section class="area-section" id="area">
+            <div class="area-inner">
+                <div class="area-text reveal">
+                    <div class="section-label">Our Mobile Service Area</div>
+                    <h2 class="section-title">We drive to you &#8212; most anywhere in Utah Valley.</h2>
+                    <p class="area-desc">Our mobile repair vehicles are stocked and ready to roll throughout most of Utah County. If you can park it in a driveway or garage, we can service it on-site.</p>
+                    <div class="area-cities">
+                        <div class="area-col" style="grid-area:1 / 1 / 2 / 3;">
+                            <h4>Utah County</h4>
+                            <span>Lindon</span>
+                            <span>Orem</span>
+                            <span>Provo</span>
+                            <span>Pleasant Grove</span>
+                            <span>American Fork</span>
+                            <span>Springville</span>
+                            <span>Spanish Fork</span>
+                            <span>Mapleton</span>
+                            <span>Salem</span>
+                            <span>Payson</span>
+                            <span>Vineyard</span>
+                        </div>
+                    </div>
+                    <p class="area-note">Don't see your city? Call us — if we can reach you, we'll be there.</p>
+                </div>
+                <div class="area-visual reveal">
+                    <div class="mobile-badge-large">
+                        <div class="mbl-icon">🚐</div>
+                        <div class="mbl-title">Fully Mobile</div>
+                        <div class="mbl-sub">Our service vehicles carry everything needed to complete most repairs on the spot — no second trips.</div>
+                        <div class="mbl-stats">
+                            <div class="mbl-stat">
+                                <div class="mbl-stat-num">Scheduled Day</div>
+                                <div class="mbl-stat-label">Service Available</div>
+                            </div>
+                            <div class="mbl-stat">
+                                <div class="mbl-stat-num">60 min</div>
+                                <div class="mbl-stat-label">Avg. Tune-Up Time</div>
+                            </div>
+                            <div class="mbl-stat">
+                                <div class="mbl-stat-num">0 miles</div>
+                                <div class="mbl-stat-label">You Drive</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ═══════════ TESTIMONIALS ═══════════ -->
+        <section class="testimonials-section" id="testimonials">
+            <div class="section-label reveal">What Customers Say</div>
+            <h2 class="section-title reveal">People really like not<br>hauling stuff around.</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"My mower and snow blower sat in storage for five years. They set them out on the driveway and within two hours both were running perfectly. Less than half what I expected to pay."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MK</div>
+                        <div>
+                            <div class="author-name">Mike K.</div>
+                            <div class="author-detail">Lawn mower + snow blower</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Are you tired of loading your equipment just to find a 4-week wait? These guys came same day. Fixed my mower, sharpened the blades, changed the oil, and hauled everything away. Never going back to a shop."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SL</div>
+                        <div>
+                            <div class="author-name">Sarah L.</div>
+                            <div class="author-detail">Push mower tune-up</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Our snow thrower is over 20 years old and now running stronger than ever. He quickly diagnosed a bad carburetor and we were back up in 20 minutes. Prices are very reasonable."</blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RP</div>
+                        <div>
+                            <div class="author-name">Rich P.</div>
+                            <div class="author-detail">Snow blower repair</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <div class="stars">★★★★★</div>
+                <blockquote>"My mower and snow blower sat in storage for five years. They set them out on the driveway and within two hours both were running perfectly. Less than half what I expected to pay."</blockquote>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MK</div>
+                    <div>
+                        <div class="author-name">Mike K.</div>
+                        <div class="author-detail">Lawn mower + snow blower</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ═══════════ PRICING ═══════════ -->
+        <!-- ═══════════ CTA ═══════════ -->
+        <section class="cta-section" id="contact">
+            <div class="cta-inner reveal">
+                <div style="font-size:3rem; margin-bottom:20px;">🚐</div>
+                <h2>Your driveway is our shop.</h2>
+                <p>Ready to stop hauling equipment across town? Utah Valley's mobile small engine experts are standing by. Book your tune-up today and we'll come to you — often the same day.</p>
+                <a href="#contact" class="btn-primary" style="font-size:1.1rem; padding:18px 44px;">Call or Text to Schedule</a>
+                <br>
+                <a href="tel:+18013183587" class="cta-phone">(801) 318-3587</a>
+            </div>
+        </section>
+        <!-- ═══════════ FOOTER ═══════════ -->
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-logo">Utah Valley <span>Small Engine Repair</span>
+                    </div>
+                    <p>Utah Valley&apos;s fully mobile small engine repair &#8212; at your home, on your schedule. Serving lawn mowers, snow blowers, generators, and everything in between across most of Utah County.</p>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Lawn Mower Tune-Up
+</li>
+                        <li>Snow Blower Repair
+</li>
+                        <li>Generator Service
+</li>
+                        <li>Blade Sharpening
+</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li>
+                            <a href="#area">Service Area</a>
+                        </li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>
+                            <a href="tel:+18013183587">(801) 318-3587</a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@utahvalleysmallengine.com"></a>
+                        </li>
+                        <li>
+                            <a href="#">Mon–Fri: 7am–5pm</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Utah Valley Small Engine Repair. All rights reserved. &nbsp;|&nbsp; Licensed &amp; Insured &nbsp;|&nbsp; 100% Mobile Service
+</div>
+        </footer>
+        <script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Mobile menu toggle
+  const menuBtn = document.querySelector('.mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+  let menuOpen = false;
+  menuBtn.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      navLinks.style.display = 'flex';
+      navLinks.style.flexDirection = 'column';
+      navLinks.style.position = 'absolute';
+      navLinks.style.top = '70px';
+      navLinks.style.left = '0';
+      navLinks.style.right = '0';
+      navLinks.style.background = 'rgba(26,46,26,0.98)';
+      navLinks.style.padding = '20px';
+      navLinks.style.gap = '16px';
+    } else {
+      navLinks.style.display = '';
+      navLinks.style.flexDirection = '';
+      navLinks.style.position = '';
+      navLinks.style.top = '';
+      navLinks.style.left = '';
+      navLinks.style.right = '';
+      navLinks.style.background = '';
+      navLinks.style.padding = '';
+      navLinks.style.gap = '';
+    }
+  });
+</script>
+    </body>
+</html>
